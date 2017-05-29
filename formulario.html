@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+
+<head>
+    
+	<title>Pagina de jugadores</title>
+
+	<meta charset="iso-8859-1">
+	<meta name="description" content = "Web con imagenes"/>
+    <meta name="keywords" content = "Futbol internacional, Champions league">
+    
+ 	<link rel="stylesheet" type="text/css" href="principal.css">
+
+    
+</head>
+
+<body>
+
+<div id="principal">
+
+	<nav id ="barranav">
+		<ul id="barranavul">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="jugadores.html">Jugadores</a></li>
+			<li><a href="resultados.html">Resultados</a></li>
+			<li  id="seleccionado"><a href="#">Formulario</a></li>
+		</ul>
+	</nav>
+    
+    <div class="barralateralh1">
+       <div class="barralateralh2">
+           <div class="titulonav">
+           <p>Galeria</p>
+           </div>
+           
+           <div class="barralateral">
+           <ul>
+              <li><a href="madrid1.html">Real Madrid</a></li>
+              <li><a href="barca1.html">Barcelona</a></li>
+              <li><a href="chelsea1.html">Chelsea</a></li>
+              <li><a href="#">Juventus</a></li>
+           </ul>
+           </div>
+        </div>
+           
+        <div class="barralateralh2">
+           <div class="titulonav">
+           <p>Multimedia</p>
+           </div>
+           
+           <div class="barralateral">
+           <ul>
+              <li><a href="madrid2.html">Real Madrid</a></li>
+              <li><a href="barca2.html">Barcelona</a></li>
+              <li><a href="chelsea2.html">Chelsea</a></li>
+              <li><a href="#">Juventus</a></li>
+           </ul>
+           </div>
+        </div>
+        
+        <div class="barralateralh2">
+           <div class="titulonav">
+           <p>Redes sociales</p>
+           </div>
+           
+           <div class="barralateral">
+           <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+           </ul>
+           </div>
+        </div>
+     </div>
+    
+    <section id="formulario">
+    
+    	<h1>Encuesta personal</h1>
+    
+        <form action="procesar.php" method="POST">
+        <table border="1">
+		<div>
+        	<tr>
+			<th><label>Nombre</label></th>
+			<th><input type = "text" name="nombre" placeholder ="Obligatorio" required/></th>
+            </tr>
+		</div>
+		<div>
+        	<tr>
+			<th><label>Apellido</label></th>
+			<th><input type = "text" name="apellido" placeholder="Obligatorio" required/></th>
+            </tr>
+		</div>
+		<div>
+        	<tr>
+			<th><span><label>Email</label></span></th>
+			<th><input type = "email" name="email" placeholder="Obligatorio" required/></th>
+            </tr>
+		</div>
+        <div>
+        	<tr>
+			<th><label>Contraseña</label></th>
+			<th><input type = "password" name="pass" maxlength="20" placeholder="Obligatorio" required/></th>
+            </tr>
+		</div>
+        <div>
+        	<tr>
+        	<th><label>Edad</label></th>
+			<th><input type = "number" name="edad" min="0" max="100"/></th>
+            </tr>
+        </div>
+        <div>
+        	<tr>
+			<th><label>Patente</label></th>
+			<th><input pattern="[a-zA-Z]{3}-[0-9]{3}" title="La patente es incorrecta" name="patente" placeholder="AAA-111 (Opcional)"/></th>
+            </tr>
+		</div>
+		<div>
+        	<tr>
+			<th><label>Color</label></th>
+			<th><input type = "color" name="color"/></th>
+            </tr>
+		</div>
+		<div>
+        	<tr>
+			<th><label>Sexo</label></th>
+			<th><label><input type = "radio" name="sexo" value="Hombre" checked/>Masculino</label>
+            <label><input type = "radio" name="sexo" value="Mujer"/>Femenino</label>
+            <label><input type = "radio" name="sexo" value="Cosa"/>Otro</label></th>
+			</tr>
+		</div>
+		<div>
+        	<tr>
+			<th><label for="">Color</label></th>
+			<th><label><input type = "checkbox" name="colores[]" value="Rojo" checked/>Rojo</label>
+			<label><input type = "checkbox" name="colores[]" value="Verde"/>Verde</label>
+			<label><input type = "checkbox" name="colores[]" value="Azul"/>Azul</label></th>
+            </tr>
+		</div>
+		<div>
+        	<tr>
+			<th><label>Club</label></th>
+			<th><select name="equipo" size="5">
+				<option value="River" selected>River Plate</option>
+				<option value="Boca">Boca Juniors</option>
+				<option value="Independiente">Independiente</option>
+				<option value="Racing">Racing</option>
+				<option value="San Lorenzo">San Lorenzo</option>
+			</select></th>
+            </tr>
+		</div>
+		<div>
+        	<tr>
+			<th><label>País</label></th>
+			<th><datalist id="paises">
+				<option value="Argentina">arg</option>
+				<option value="Chile">chi</option>
+				<option value="Japon">jap</option>
+				<option value="España">esp</option>
+				<option value="Holanda">hol</option>
+			</datalist>
+			<input type="text" list="paises" name="pais"></th>
+            </tr>
+		</div>
+        <div>
+        	<tr>
+            <th><label>Numero favorito</label></th>
+			<th><input type = "range" name="numero" min="1" max="1000" step="1" id="rango" onchange="mostrar()"/>
+			<input type = "text" value ="500" disabled id="salida" required autofocus/></th>
+			</tr>
+			<script>
+			function mostrar(){
+				salida.value = rango.value
+			}
+			</script>
+			
+		</div>
+        </table>
+        <div id="botones">
+		<input type = "submit" value="Enviar"/>
+		<input type = "reset" value="Borrar"/>
+        </div>
+	
+	</form>
+    </section>
+     
+     
+     <footer>
+    	<small><p>Copyright 2016, Mart&iacute;n Bobbio</p></small>
+    </footer>
+	
+	</div>
+    
+</body>
+
+</html>
